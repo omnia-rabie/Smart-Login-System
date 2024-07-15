@@ -1,0 +1,100 @@
+* {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-family: 'Poppins', sans-serif;
+}
+.wrapper {
+  background-color: #5e5959;
+  width: 400px;
+  height: 600px;
+  box-shadow: 0 0 50px rgb(191, 129, 199);
+  border-radius: 20px;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.5s;
+}
+.wrapper.active {
+  transform: translateX(-100%);
+}
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.tab {
+  font-size: 1.3em;
+  color: #dad5d5;
+}
+.tab.active {
+  color: white;
+  border-bottom: 2px solid #cca4c2;
+}
+.form-container {
+  position: absolute;
+  width: 100%;
+  padding: 20px 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form-container:not(.active) {
+  display: none;
+}
+.wrapper:hover {
+  animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.form-wrapper {
+  transition: 1s ease-in-out;
+}
+.wrapper.active .form-wrapper.sign-in {
+  transform: translateY(-450px);
+}
+.wrapper .form-wrapper.sign-up {
+  position: absolute;
+  top: 450px;
+  left: 0;
+}
+.wrapper.active .form-wrapper.sign-up {
+  transform: translateY(-450px);
+}
+
+input {
+  display: block;
+  padding: 10px ;
+  font-size: 1.3em;
+  border: 1px solid #cca4c2;
+  color:rgb(94, 89, 89) ;
+  border-radius: 5px;
+}
+.pl1{
+  margin-bottom: 15px;
+}
+.pl-inp{
+  width: 88%;
+  margin-left: 5px;
+}
+.bnt{
+  color: #5e5959;
+  background-color: rgba(226, 158, 226, 0.82);
+  width: 30%;
+  margin-left: 30%;
+  border: none;
+  cursor: pointer;
+}
+.bnt:hover{
+  background-color: rgba(223, 100, 223, 0.82);
+}
